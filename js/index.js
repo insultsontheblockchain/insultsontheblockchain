@@ -21,9 +21,9 @@ $(document).ready(function() {
 
 function initWeb3(isLocalHost) {
 	if(isLocalHost) {
-		web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		web3 = new Web3(new Web3.providers.HttpProvider("https://localhost:8545"));
 	} else {
-		web3 = new Web3(new Web3.providers.HttpProvider("http://188.166.104.12:8501"));
+		web3 = new Web3(new Web3.providers.HttpProvider("https://188.166.104.12:8501"));
 	}
 	abi = JSON.parse('[{"constant":false,"inputs":[{"name":"_insultId","type":"uint256"}],"name":"voteForInsult","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_insult","type":"string"}],"name":"addInsult","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_insultId","type":"uint256"}],"name":"getVotesByInsultId","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_insultId","type":"uint256"}],"name":"getInsultById","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"insertPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"maxLength","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"insultCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"},{"indexed":false,"name":"text","type":"string"},{"indexed":false,"name":"writer","type":"address"}],"name":"InsultAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"},{"indexed":false,"name":"voteCount","type":"uint256"}],"name":"VoteAdded","type":"event"}]');
 
